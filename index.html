@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Calculator</title>
+    <title>Scientific Calculator</title>
     <style>
         body {
             display: flex;
@@ -35,13 +35,13 @@
         }
         .buttons {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 15px;
         }
         .buttons button {
             width: 100%;
-            padding: 25px;
-            font-size: 1.5em;
+            padding: 20px;
+            font-size: 1.2em;
             border: none;
             border-radius: 10px;
             background-color: #e0e0e0;
@@ -59,9 +59,17 @@
         .buttons button.operator:hover {
             background-color: #e58e00;
         }
+        .buttons button.function {
+            background-color: #3498db;
+            color: white;
+        }
+        .buttons button.function:hover {
+            background-color: #2980b9;
+        }
         .buttons button.clear {
             background-color: #ff4c4c;
             color: white;
+            grid-column: span 2;
         }
         .buttons button.clear:hover {
             background-color: #ff1a1a;
@@ -69,7 +77,7 @@
         .buttons button.equal {
             background-color: #00aaff;
             color: white;
-            grid-column: span 4;
+            grid-column: span 5;
         }
         .buttons button.equal:hover {
             background-color: #0088cc;
@@ -96,7 +104,15 @@
             <button onclick="appendToDisplay('.')">.</button>
             <button onclick="clearDisplay()" class="clear">C</button>
             <button onclick="appendToDisplay('+')" class="operator">+</button>
+            <button onclick="appendToDisplay('(')">(</button>
+            <button onclick="appendToDisplay(')')">)</button>
+            <button onclick="appendToDisplay('%')" class="operator">%</button>
             <button onclick="calculateResult()" class="equal">=</button>
+            <button onclick="appendToDisplay('Math.sin(')" class="function">sin</button>
+            <button onclick="appendToDisplay('Math.cos(')" class="function">cos</button>
+            <button onclick="appendToDisplay('Math.tan(')" class="function">tan</button>
+            <button onclick="appendToDisplay('Math.log(')" class="function">log</button>
+            <button onclick="appendToDisplay('Math.pow(')" class="function">pow</button>
         </div>
     </div>
 
